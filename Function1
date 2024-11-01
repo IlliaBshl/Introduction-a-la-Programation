@@ -1,5 +1,4 @@
 import math
-from operator import truediv
 
 pi = math.pi
 
@@ -31,26 +30,12 @@ def bissextile(annee):
     return biss
 
 
-annee = int(input("Donnez une annee: "))
-
-biss = bissextile(annee)
-if biss:
-    print("bissextile")
-else:
-    print("normale")
-
-
 def compte_min(chaine):
     n = 0
     for i in chaine:
         if i.islower():
             n += 1
     return n
-
-
-chaine = input("Donnez une chaine: ")
-n = compte_min(chaine)
-print(n)
 
 
 def heure_sec(h, m, s):
@@ -66,25 +51,15 @@ def seconde_her(s):
     return h, m, s
 
 
-choix = int(input("Voulez-vous le choix 1 (h:m:s en sec) ou choix 2 (sec en h:m:s)? "))
-if choix == 1:
-    h = int(input("Combien d'heures? "))
-    m = int(input("Combien de minutes? "))
-    s = int(input("Combien de secondes? "))
-    print(heure_sec(h, m, s))
-if choix == 2:
-    s = int(input("Combien de secondes? "))
-    print(seconde_her(s))
+def multiplication_table(nmbr):
+    for i in range(11):
+        print(f"{nmbr} x {i} = {nmbr * i}")
 
 
-nmbr = int(input("Entrez un nombre: "))
-
-for i in range(10):
-    nmbr = nmbr + 1
-    print(nmbr)
+def main():
+    nmbr = int(input("Entrez un nombre pour la table de multiplication: "))
+    multiplication_table(nmbr)
 
 
-nmbr = int(input("Entrez un nombre: "))
-
-for i in range(11):
-    print(f"{nmbr} x {i} = {nmbr * i}")
+if __name__ == "__main__":
+    main()
