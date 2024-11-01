@@ -1,0 +1,26 @@
+'''prnom = str(input("entret votre prenom"))
+nom = str(input("entret votre nom"))
+
+
+print(prnom[:1],"." + nom[:1])'''
+
+
+'''mot = input("Veuillez saisir un mot : ")
+
+
+# Afficher le mot à l'envers
+mot_inverse = mot[::-1]
+print("Le mot à l'envers est :", mot_inverse)''zzzzz'
+'''
+mot = input("Veuillez saisir un mot : ")
+car = input("Veuillez saisir le carcehter rechercher :")'''
+
+
+"""mot1 = input("Veuillez saisir 1er mot : ")
+motinv = mot1[::-1]
+
+
+if mot1 == motinv:
+   print("ceci est un palimdrome")
+else:
+   print("ceci nest pas un palimdrome")"""
