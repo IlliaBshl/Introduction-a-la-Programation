@@ -1,43 +1,48 @@
-nomb1 = int(input("Veuillez saisir le 1er nombre entier: "))
-nomb2 = int(input("Veuillez saisir le 2ème nombre entier: "))
-operateur = input("Veuillez entrer l'opérateur: ")
-reponse = float(input("Veuillez saisir la réponse: "))
+def main() -> None:
+    nomb1: int = int(input("Veuillez saisir le 1er nombre entier: "))
+    nomb2: int = int(input("Veuillez saisir le 2ème nombre entier: "))
+    operateur: str = input("Veuillez entrer l'opérateur: ")
+    reponse: float = float(input("Veuillez saisir la réponse: "))
 
-if operateur == "*":
-    produit = nomb1 * nomb2
-    for _ in range(4):
-        if produit == reponse:
-            print("Bravo!")
-            break
-        else:
-            reponse = float(input("Donnez une autre réponse: "))
+    if operateur == "*":
+        produit: int = nomb1 * nomb2
+        for _ in range(4):
+            if produit == reponse:
+                print("Bravo!")
+                break
+            else:
+                reponse = float(input("Donnez une autre réponse: "))
 
-elif operateur == "-":
-    moins = nomb1 - nomb2
-    for _ in range(4):
-        if moins == reponse:
-            print("Bravo!")
-            break
-        else:
-            reponse = float(input("Donnez une autre réponse: "))
+    elif operateur == "-":
+        moins: int = nomb1 - nomb2
+        for _ in range(4):
+            if moins == reponse:
+                print("Bravo!")
+                break
+            else:
+                reponse = float(input("Donnez une autre réponse: "))
 
-elif operateur == "+":
-    somme = nomb1 + nomb2
-    for _ in range(4):
-        if somme == reponse:
-            print("Bravo!")
-            break
-        else:
-            reponse = float(input("Donnez une autre réponse: "))
+    elif operateur == "+":
+        somme: int = nomb1 + nomb2
+        for _ in range(4):
+            if somme == reponse:
+                print("Bravo!")
+                break
+            else:
+                reponse = float(input("Donnez une autre réponse: "))
 
-elif operateur == "/":
-    div = nomb1 / nomb2
-    for _ in range(4):
-        if div == reponse:
-            print("Bravo!")
-            break
-        else:
-            reponse = float(input("Donnez une autre réponse: "))
+    elif operateur == "/":
+        div: float = nomb1 / nomb2
+        for _ in range(4):
+            if div == reponse:
+                print("Bravo!")
+                break
+            else:
+                reponse = float(input("Donnez une autre réponse: "))
+
+
+if __name__ == "__main__":
+    main()
 
 
 
