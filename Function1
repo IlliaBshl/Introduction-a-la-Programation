@@ -1,105 +1,90 @@
 import math
 from operator import truediv
 
-
 pi = math.pi
 
 
-def ligneCar(n, ch):
-   for i in range(n):
-       print(ch, end="")
+def ligne_car(n, ch):
+    for i in range(n):
+        print(ch, end="")
 
 
+def surf_cercle(r):
+    s = math.sqrt(r * pi)
+    print(s)
 
 
-def surfCercle(R):
-   s = math.sqrt(R * pi)
-   print(s)
+def longeur_entier(un_nbre):
+    nb_chiffres = 1
+    base = 10
+    while (un_nbre / base) >= 1:
+        nb_chiffres = nb_chiffres + 1
+        base = base * 10
+    return nb_chiffres
 
 
-
-def longeurEntier(unNbre):
-   nbChiffres = 1
-   base = 10
-   while((unNbre/base)>=1):
-       nbChiffres = nbChiffres + 1
-       base = base * 10
-   return nbChiffres
+def bissextile(annee):
+    if (annee % 4) == 0:
+        biss = True
+    else:
+        biss = False
+    return biss
 
 
+annee = int(input("Donnez une annee: "))
 
-
-def bissextile(anee):
-   if (anee % 4) == 0:
-       biss = True
-   else:
-       biss = False
-
-
-"""anee = int(input(donnez une annee))
-
-
-biss = bissextile(anee)
-if biss == True:
-   print("bissextie")
+biss = bissextile(annee)
+if biss:
+    print("bissextile")
 else:
-   print("normale")"""
-n = 0
-def compteMin(chaine):
-   n = 0
-   for i in chaine:
-       if i.islower() == True:
-           n +=1
-   return n
+    print("normale")
 
 
-'''chaine = input("Donnez une chaine")
-n = compteMin(chaine)
-print(n)'''
+def compte_min(chaine):
+    n = 0
+    for i in chaine:
+        if i.islower():
+            n += 1
+    return n
 
 
+chaine = input("Donnez une chaine: ")
+n = compte_min(chaine)
+print(n)
 
 
-def heureSec(h, m, s):
-   sec = (h * 3600) + (m * 60) + s
-   return sec
+def heure_sec(h, m, s):
+    sec = (h * 3600) + (m * 60) + s
+    return sec
 
 
-def secondeHer(s):
-   h = s // 3600
-   s = s % 3600
-   m = s // 60
-   s = s % 60
-   return  h,m,s
+def seconde_her(s):
+    h = s // 3600
+    s = s % 3600
+    m = s // 60
+    s = s % 60
+    return h, m, s
 
 
-
-
-choix = int(input("Voullez vous le choix 1(h:m:s en sec) un ou choix 2(sec en h:m:s)"))
+choix = int(input("Voulez-vous le choix 1 (h:m:s en sec) ou choix 2 (sec en h:m:s)? "))
 if choix == 1:
-   h = int(input("combien d'heures"))
-   m = int(input("combien minutes"))
-   s = int(input("combien secodnes"))
-   print(heureSec(h,m,s))
+    h = int(input("Combien d'heures? "))
+    m = int(input("Combien de minutes? "))
+    s = int(input("Combien de secondes? "))
+    print(heure_sec(h, m, s))
 if choix == 2:
-   s = int(input("combien secodnes"))
-   print(secondeHer(s))
+    s = int(input("Combien de secondes? "))
+    print(seconde_her(s))
 
 
+nmbr = int(input("Entrez un nombre: "))
 
-'''nmbr = int(input("Entrez un nombre"))
-
-
-for i in range(0, 10):
-   nmbr = nmbr + 1
-   print(nmbr)'''
+for i in range(10):
+    nmbr = nmbr + 1
+    print(nmbr)
 
 
+nmbr = int(input("Entrez un nombre: "))
 
-
-'''nmbr = int(input("Entrez un nombre"))
-
-
-for i in range(0, 11):
-   print(nmbr, "x", i, "=", nmbr * i)
-'''
+for i in range(11):
+    print(f"{nmbr} x {i} = {nmbr * i}")
