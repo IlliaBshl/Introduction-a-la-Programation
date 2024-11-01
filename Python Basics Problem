@@ -1,0 +1,48 @@
+nomb1 = int(input("Veuillez saisir 1er nombre entier: "))
+nomb2 = int(input("Veuillez saisir 2em nombre entier5: "))
+operateur = input("Veuillez maitre l'operateur ")
+reponse = float(input("Veuillez saisir la reponse: "))
+
+
+if operateur == "*":
+   produit = nomb1 * nomb2
+   for i in range(4):
+       if produit == reponse:
+           print("bravo")
+           break
+       else:
+           reponse = int(input("donnez une autre reponse"))
+
+
+elif operateur == "-":
+   moins = nomb1 - nomb2
+   for i in range(4):
+       if moins == reponse:
+           print("bravo")
+           break
+       else:
+           reponse = int(input("donnez une autre reponse"))
+
+
+elif operateur == "+":
+   somme = nomb1 + nomb2
+   for i in range(4):
+       if somme == reponse:
+           print("bravo")
+           break
+       else:
+           reponse = int(input("donnez une autre reponse"))
+
+
+elif operateur == "/":
+   div = nomb1 / nomb2
+   for i in range(4):
+       if div == reponse:
+           print("bravo")
+           break
+       else:
+           reponse = float(input("donnez une autre reponse"))
+
+
+
+
