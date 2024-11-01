@@ -1,28 +1,29 @@
 import math
+from typing import Tuple
 
-pi = math.pi
+pi: float = math.pi
 
 
-def ligne_car(n, ch):
+def ligne_car(n: int, ch: str) -> None:
     for i in range(n):
         print(ch, end="")
 
 
-def surf_cercle(r):
-    s = math.sqrt(r * pi)
+def surf_cercle(r: float) -> None:
+    s: float = math.sqrt(r * pi)
     print(s)
 
 
-def longeur_entier(un_nbre):
-    nb_chiffres = 1
-    base = 10
+def longeur_entier(un_nbre: int) -> int:
+    nb_chiffres: int = 1
+    base: int = 10
     while (un_nbre / base) >= 1:
         nb_chiffres = nb_chiffres + 1
         base = base * 10
     return nb_chiffres
 
 
-def bissextile(annee):
+def bissextile(annee: int) -> bool:
     if (annee % 4) == 0:
         biss = True
     else:
@@ -30,34 +31,34 @@ def bissextile(annee):
     return biss
 
 
-def compte_min(chaine):
-    n = 0
+def compte_min(chaine: str) -> int:
+    n: int = 0
     for i in chaine:
         if i.islower():
             n += 1
     return n
 
 
-def heure_sec(h, m, s):
-    sec = (h * 3600) + (m * 60) + s
+def heure_sec(h: int, m: int, s: int) -> int:
+    sec: int = (h * 3600) + (m * 60) + s
     return sec
 
 
-def seconde_her(s):
-    h = s // 3600
+def seconde_her(s: int) -> Tuple[int, int, int]:
+    h: int = s // 3600
     s = s % 3600
-    m = s // 60
+    m: int = s // 60
     s = s % 60
     return h, m, s
 
 
-def multiplication_table(nmbr):
+def multiplication_table(nmbr: int) -> None:
     for i in range(11):
         print(f"{nmbr} x {i} = {nmbr * i}")
 
 
-def main():
-    nmbr = int(input("Entrez un nombre pour la table de multiplication: "))
+def main() -> None:
+    nmbr: int = int(input("Entrez un nombre pour la table de multiplication: "))
     multiplication_table(nmbr)
 
 
