@@ -1,0 +1,47 @@
+''nmbr = int(input("Entrez un nombre"))
+
+
+for i in range(0, 10):
+   nmbr = nmbr + 1
+   print(nmbr)'''
+
+
+
+
+'''nmbr = int(input("Entrez un nombre"))
+
+
+for i in range(0, 11):
+   print(nmbr, "x", i, "=", nmbr * i)
+'''
+
+
+'''n = int(input("Entrez le nombre de rep"))
+nombre = 0
+for i in range(n):
+   pri = float(input(f"Entrez le nombre {i + 1}"))
+   if nombre == 0 or pri > nombre:
+       nombre = pri
+print(nombre)
+'''
+
+
+'''
+n = int(input("Entrez le nombre"))
+for i in range(1, n+1):
+   for j in range(i):
+       print("*", end=" ")
+   print()'''
+
+
+n = int(input("Entrez le nombre"))
+for i in range(n):
+   for j in range(n - i):
+       print("-", end=" ")
+   for j in range(i):
+       print("*", end=" ")
+   print()
+
+
+
+
