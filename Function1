@@ -1,0 +1,105 @@
+import math
+from operator import truediv
+
+
+pi = math.pi
+
+
+def ligneCar(n, ch):
+   for i in range(n):
+       print(ch, end="")
+
+
+
+
+def surfCercle(R):
+   s = math.sqrt(R * pi)
+   print(s)
+
+
+
+def longeurEntier(unNbre):
+   nbChiffres = 1
+   base = 10
+   while((unNbre/base)>=1):
+       nbChiffres = nbChiffres + 1
+       base = base * 10
+   return nbChiffres
+
+
+
+
+def bissextile(anee):
+   if (anee % 4) == 0:
+       biss = True
+   else:
+       biss = False
+
+
+"""anee = int(input(donnez une annee))
+
+
+biss = bissextile(anee)
+if biss == True:
+   print("bissextie")
+else:
+   print("normale")"""
+n = 0
+def compteMin(chaine):
+   n = 0
+   for i in chaine:
+       if i.islower() == True:
+           n +=1
+   return n
+
+
+'''chaine = input("Donnez une chaine")
+n = compteMin(chaine)
+print(n)'''
+
+
+
+
+def heureSec(h, m, s):
+   sec = (h * 3600) + (m * 60) + s
+   return sec
+
+
+def secondeHer(s):
+   h = s // 3600
+   s = s % 3600
+   m = s // 60
+   s = s % 60
+   return  h,m,s
+
+
+
+
+choix = int(input("Voullez vous le choix 1(h:m:s en sec) un ou choix 2(sec en h:m:s)"))
+if choix == 1:
+   h = int(input("combien d'heures"))
+   m = int(input("combien minutes"))
+   s = int(input("combien secodnes"))
+   print(heureSec(h,m,s))
+if choix == 2:
+   s = int(input("combien secodnes"))
+   print(secondeHer(s))
+
+
+
+'''nmbr = int(input("Entrez un nombre"))
+
+
+for i in range(0, 10):
+   nmbr = nmbr + 1
+   print(nmbr)'''
+
+
+
+
+'''nmbr = int(input("Entrez un nombre"))
+
+
+for i in range(0, 11):
+   print(nmbr, "x", i, "=", nmbr * i)
+'''
