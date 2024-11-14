@@ -1,0 +1,29 @@
+def fibonacci_tuple(n):
+
+    if n <= 0:
+        return ()
+
+
+    fib = [0, 1]
+
+
+    for i in range(2, n):
+        fib.append(fib[-1] + fib[-2])
+
+
+    return tuple(fib[:n])
+
+
+def test(tup, mult):
+    z = []
+    lis = []
+    for i in tup:
+        t = i[1]
+        p = i[0]
+        x = t * mult
+        lis.append(p)
+        lis.append(x)
+    z.append(tuple(lis))
+    return tuple(z)
+
+print(test(( ("Farine (g)", 450), ("oeuf", 4), ("sucre (g)", 420), ("lait (ml)", 310) ),5))
