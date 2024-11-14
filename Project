@@ -1,0 +1,38 @@
+import datetime
+
+def menu():
+      print("Menu\n"
+            "##########\n"
+            " 1.Ajouter un document\n"
+            " 2.Ajouter un répertoire/dossier\n"
+            " 3.Supprimer un élément de la liste\n"
+            " 4.Afficher le contenu et le sauvegarder dans un fichier\n"
+            " 5.Quitter")
+def trouver(grand_list, nom):
+    for sblist in grand_list:
+        if sblist[0] == nom:
+            return sblist
+
+list = []
+choix = 0
+while not(choix == 5):
+      menu()
+      choix = int(input(print("Quel est votre choix?:")))
+      if choix == 1:
+             z = input(print("Quelle est le nom de document: "))
+             x = int(input(print("Quelle est la taille:")))
+             t = input(print("Quelle est le type:"))
+             y = datetime.datetime.now()
+             sublist = [z, x, t, str(y)]
+             list.append(sublist)
+
+      if choix == 2:
+            z = input(print("Quelle est le nom de document: "))
+            t = input(print("Quelle est le type:"))
+            y = datetime.datetime.now()
+            sublist = [z, t, str(y)]
+            list.append(sublist)
+
+      if choix == 3:
+            nom = input(print("Quelle est le nom de document: "))
+            utilise = trouver(list, nom)
