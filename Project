@@ -12,8 +12,10 @@ def trouver(grand_list, nom):
     for sblist in grand_list:
         if sblist[0] == nom:
             return sblist
+        else:
+            return None
 
-list = []
+tout = []
 choix = 0
 while not(choix == 5):
       menu()
@@ -21,18 +23,82 @@ while not(choix == 5):
       if choix == 1:
              z = input(print("Quelle est le nom de document: "))
              x = int(input(print("Quelle est la taille:")))
-             t = input(print("Quelle est le type:"))
              y = datetime.datetime.now()
-             sublist = [z, x, t, str(y)]
-             list.append(sublist)
+             sublist = [z, x, "Document", str(y)]
+             tout.append(sublist)
 
       if choix == 2:
             z = input(print("Quelle est le nom de document: "))
-            t = input(print("Quelle est le type:"))
             y = datetime.datetime.now()
-            sublist = [z, t, str(y)]
-            list.append(sublist)
+            sublist = [z," ","Dossier" , str(y)]
+            tout.append(sublist)
 
       if choix == 3:
-            nom = input(print("Quelle est le nom de document: "))
-            utilise = trouver(list, nom)
+          nom = input(print("Quelle est le nom de document: "))
+          utilise = trouver(tout, nom)
+          if utilise is None:
+              print("ce document n'existe pas")
+          elif utilise[2] == "Document":
+              tout.remove(utilise)
+          elif utilise[2] == "Dossier":
+              z = input("voulez vous supprimer ce Dossier")
+              if z == "oui":
+                  tout.remove(utilise)
+              else:
+                  print("annuller")
+
+      if choix == 4:
+            st_fn = ("##########\n"
+            "Élément   Taille  Type   Date\n ")
+            for i in tout:
+                for s in range(4):
+                    t = i[s]
+                    d = t[:7]
+                    st_fn += str(i[s])
+                    print("")
+                    st_fn.center(30)
+            print("")
+
+            print(st_fn)
+
+
+
+      # Define the header
+      st_fn = "##########\n"
+      st_fn += "Élément".ljust(20) + "Taille".ljust(15) + "Type".ljust(20) + "Date".ljust(20) + "\n"
+
+      # Loop through each item in `tout`
+      for i in tout:
+          # Handle missing "Taille" by replacing it with a blank or "N/A"
+          taille = str(i[1]) if i[1] is not None else "N/A"  # Replace None with "N/A"
+
+          # Format each item and add to `st_fn`
+          st_fn += str(i[0]).ljust(20) + taille.ljust(15) + str(i[2]).ljust(20) + str(i[3]).ljust(20) + "\n"
+
+      # Print the final result
+      print(st_fn)
+
+
+
+
+
+
+
+
+
+
+
+
+print(tout)
+
+
+
+
+
+
+
+
+
+
+
+
