@@ -1,4 +1,5 @@
-import datetime
+import os
+from datetime import datetime
 
 def menu():
       print("Menu\n"
@@ -19,17 +20,22 @@ tout = []
 choix = 0
 while not(choix == 5):
       menu()
-      choix = int(input(print("Quel est votre choix?:")))
+      try:
+          choix = int(input(print("Quel est votre choix?:")))
+      except:
+          print("Vous devez entrer un nombre entier")
       if choix == 1:
-             z = input(print("Quelle est le nom de document: "))
+             z = input(print("Quelle est le nom de document: "))[:18]
              x = int(input(print("Quelle est la taille:")))
-             y = datetime.datetime.now()
+             y = datetime.now()
+             y = y.strftime("%Hh%M, %Y/%m/%d")
              sublist = [z, x, "Document", str(y)]
              tout.append(sublist)
 
       if choix == 2:
-            z = input(print("Quelle est le nom de document: "))
-            y = datetime.datetime.now()
+            z = input(print("Quelle est le nom de document: "))[:18]
+            y = datetime.now()
+            y = y.strftime("%Hh%M, %Y/%m/%d")
             sublist = [z," ","Dossier" , str(y)]
             tout.append(sublist)
 
@@ -48,54 +54,39 @@ while not(choix == 5):
                   print("annuller")
 
       if choix == 4:
-            st_fn = ("##########\n"
-            "Élément   Taille  Type   Date\n ")
+            st_fn = "##########\n"
+            st_fn += "Élément".ljust(20) + "Taille".ljust(15) + "Type".ljust(20) + "Date".ljust(20) + "\n"
             for i in tout:
-                for s in range(4):
-                    t = i[s]
-                    d = t[:7]
-                    st_fn += str(i[s])
-                    print("")
-                    st_fn.center(30)
-            print("")
+                taille = str(i[1]) if i[1] is not None else "N/A"
+                st_fn += str(i[0]).ljust(20) + taille.ljust(15) + str(i[2]).ljust(20) + str(i[3]).ljust(20) + "\n"
+            st_fn += "-------------------------------------------------------------------------"
+            doc = 0
+            dos = 0
+            bit_tot = 0
+            for i in tout:
+                if i[2] == "Document":
+                    doc += 1
+                    if isinstance(i[1], int):
+                         bit_tot += int(i[1])
+                if i[2] == "Dossier":
+                    dos += 1
 
+            st_fn += f"\n{doc} Documents" + f"         {bit_tot}\n"
+            st_fn += f"{dos} Dossiers\n"
             print(st_fn)
 
+            with open("project.txt", "w") as f:
+                f.write(st_fn)
+                print("Fichier enregister dans ", os.getcwd())
 
 
-      # Define the header
-      st_fn = "##########\n"
-      st_fn += "Élément".ljust(20) + "Taille".ljust(15) + "Type".ljust(20) + "Date".ljust(20) + "\n"
-
-      # Loop through each item in `tout`
-      for i in tout:
-          # Handle missing "Taille" by replacing it with a blank or "N/A"
-          taille = str(i[1]) if i[1] is not None else "N/A"  # Replace None with "N/A"
-
-          # Format each item and add to `st_fn`
-          st_fn += str(i[0]).ljust(20) + taille.ljust(15) + str(i[2]).ljust(20) + str(i[3]).ljust(20) + "\n"
-
-      # Print the final result
-      print(st_fn)
+      else:
+          print("Ceci n'est pas un choix valable")
 
 
 
 
-
-
-
-
-
-
-
-
-print(tout)
-
-
-
-
-
-
+print("au revoir")
 
 
 
